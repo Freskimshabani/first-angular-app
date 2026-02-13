@@ -1,7 +1,7 @@
 <div class="w-full">
     <button (click)="onSelectUser()"
         class="w-full flex items-center gap-4 p-4 bg-neutral-900 rounded-lg hover:bg-blue-600 cursor-pointer ease-in-out duration-200 transition-colors">
-        <img [src]="userProfile()" [alt]="selectedUser().name" class="size-10 rounded-full" />
-        <span class="text-lg">{{selectedUser().name}}</span>
+        <img [src]="userProfile" [alt]="user.name" class="size-10 rounded-full" />
+        <span class="text-lg">{{user.name}}</span>
     </button>
 </div>
