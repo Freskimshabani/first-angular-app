@@ -4,15 +4,18 @@ import { HeaderComponent } from "./header/header.component";
 import { User } from "./user/user";
 import { USERS } from "./dummy-users";
 import { Tasks } from './tasks/tasks';
+import { LucideAngularModule } from 'lucide-angular';
 
 @Component({
+  standalone: true,
   selector: 'app-root',
-  imports: [HeaderComponent, User, Tasks],
+  imports: [LucideAngularModule, HeaderComponent, User, Tasks],
   templateUrl: './app.html',
   styleUrl: './app.css'
 })
 export class App {
   protected readonly title = signal('first-angular-app');
+
   users = USERS;
   selectedUserId?: string;
 

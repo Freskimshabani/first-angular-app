@@ -1,10 +1,5 @@
 import { Component, computed, EventEmitter, Input, input, Output } from '@angular/core';
-
-type UserObj = {
-  id: string;
-  profile: string;
-  name: string;
-}
+import { UserModel } from './user.model';
 
 @Component({
   selector: 'app-user',
@@ -19,7 +14,8 @@ export class User {
   //   name: string;
   //   profile: string;
   // };
-  @Input({required: true}) user!: UserObj;
+  @Input({required: true}) user!: UserModel;
+  @Input({required: true}) selected: boolean = false;
 
   // @Input({required: true}) id!: string;
   // @Input({required: true}) profile: string = 'user-1.jpg';

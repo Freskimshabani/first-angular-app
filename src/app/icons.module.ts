@@ -1,9 +1,9 @@
 import { NgModule } from "@angular/core";
-import { ClipboardCheck, LucideAngularModule } from "lucide-angular";
+import { Plus, ClipboardCheck, LucideAngularModule, CircleCheckBig } from "lucide-angular";
 
 @NgModule({
     imports: [
-        LucideAngularModule.pick({ ClipboardCheck })
+        LucideAngularModule.pick({Plus, ClipboardCheck, CircleCheckBig})
     ]
 })
 

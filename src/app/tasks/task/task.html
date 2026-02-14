@@ -1,0 +1,13 @@
+<article class="flex flex-col gap-2 p-4 bg-neutral-900 rounded-xl">
+    <div class="w-full flex flex-row justify-between items-start">
+        <div>
+            <h4 class="text-xl font-medium">{{task.title || "Task Title"}}</h4>
+            <span class="text-md text-neutral-700">{{task.dueDate || "Not Set"}}</span>
+        </div>
+        <button (click)="onCompleteTask()" class="flex flex-row gap-2 items-center py-2 px-3 rounded-lg bg-neutral-800 hover:bg-green-600 ease-in-out transition-all duration-300 cursor-pointer">
+            Mark Completed
+            <lucide-icon [size]="20" name="circle-check-big"></lucide-icon>
+        </button>
+    </div> 
+    <p class="text-neutral-400">Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptas, voluptate.</p>
+</article>

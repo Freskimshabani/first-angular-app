@@ -1,18 +1,19 @@
 <app-header />
 <main class="w-full h-full font-default">
-  <section class="m-8 grid grid-cols-[1fr_5fr] gap-8">
+  <section class="m-8 grid grid-cols-[1fr_3fr] gap-8">
     <aside class="w-full h-full flex flex-col gap-2">
       <h4 class="text-3xl font-semibold mb-4">Users</h4>
       @for (user of users; track user.id){
-        <app-user [user]="user" (select)="onSelectUser($event)"/>
+        <app-user [selected]="user.id === selectedUserId" [user]="user" (select)="onSelectUser($event)"/>
       }
     </aside>
     <aside class="w-full h-full flex flex-col gap-4">
       @if (selectedUser) {
-        <app-tasks [name]='selectedUser.name + " Tasks"' />
+        <app-tasks [selectedUserId]="selectedUser.id"  [name]='selectedUser.name' />
       }
       @else {
-        <app-tasks [name]="'Tasks'" />
+        <h4 class="text-3xl font-semibold">No Tasks Available</h4>
+            <p class="text-neutral-400">Select a user to see their tasks.</p>
       }
     </aside>
   </section>
