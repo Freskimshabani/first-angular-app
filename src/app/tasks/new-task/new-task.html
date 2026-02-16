@@ -1,10 +1,28 @@
-<div class="absolute w-full h-full bg-black/50"></div>
-<dialog class="" open>
-    <h2 class="text-3xl font-semibold">Add a New Task</h2>
-    <form>
-        <div>
-            <label for="title">Title</label>
-            <input type="text" name="title" id="title" />
+<div (click)="onCancelTask()" class="fixed top-0 left-0 w-full h-screen bg-black/50"></div>
+<dialog class="flex flex-col gap-4 w-[90%] max-w-120 mx-auto bg-neutral-800 text-white rounded-xl overflow-hidden p-4" open>
+    <h2 class="text-2xl font-semibold">Add a New Task</h2>
+    <form class="flex flex-col gap-4">
+        <div class="flex flex-col gap-2">
+            <label class="text-neutral-100" for="title">Title</label>
+            <input placeholder="Learn Angular..." class="p-2 text-white outline-2 outline-neutral-500 rounded-md" type="text" name="title" id="title" />
+        </div>
+        <div class="flex flex-col gap-2">
+            <label class="text-neutral-100" for="description">Description</label>
+            <textarea placeholder="Master Angular and develop your first application..." class="resize-none min-h-50 p-2 text-white outline-2 outline-neutral-500 rounded-md" name="description" id="description"></textarea>
+        </div>
+        <div class="flex flex-col gap-2">
+            <label class="text-neutral-100" for="dueDate">Due Date</label>
+            <input class="p-2 text-white outline-2 outline-neutral-500 rounded-md" type="date" name="dueDate" id="dueDate" />
+        </div>
+        <div class="flex flex-row justify-end gap-2">
+            <button (click)="onCancelTask()" type="button" class="flex flex-row gap-2 items-center py-2 px-3 rounded-lg bg-neutral-700 hover:bg-neutral-500 ease-in-out transition-all duration-300 cursor-pointer">
+                <lucide-icon [size]="20" name="x-icon"></lucide-icon>
+                Cancel
+            </button>
+            <button (click)="onAddTask()" type="submit" class="flex flex-row gap-2 items-center py-2 px-3 rounded-lg bg-blue-600 hover:bg-blue-500 ease-in-out transition-all duration-300 cursor-pointer">
+                <lucide-icon [size]="20" name="plus"></lucide-icon>
+                Add Task
+            </button>
         </div>
     </form>
 </dialog>
